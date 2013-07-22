@@ -9,7 +9,11 @@ var sample_url = "https://docs.google.com/spreadsheet/pub?key=0AsMGn_2Fl4CEdG1sQ
 
 var success = function(){
   console.log(googleSpreadsheet);
-  console.log(googleSpreadsheet.rows);
+
+  var iterator = googleSpreadsheet.getIterator();
+  do{
+    console.log(iterator.getRow(true));
+  } while (iterator.next());
 };
 
 var fail = function(){
